@@ -10,7 +10,7 @@ trait RsaBreaker {
 object RsaBreaker extends RsaBreaker {
 	// This presumes n = p * q
 	override def recoverKey(publicKey: RsaPublicKey): RsaKey = {
-		// throw new NotImplementedError("You must implement recoverKey(n) yourself")
+		// throw new NotImplementedError("You must implement recoverKey(publicKey) yourself")
 		val factored = factor(publicKey.n)
 
 		val p = factored.head
