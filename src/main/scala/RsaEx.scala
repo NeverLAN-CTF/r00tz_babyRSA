@@ -76,10 +76,10 @@ object RsaEx extends App {
 	  * You will need to write some code! When you think you're ready,
 	  * uncomment the last two lines before the closing }.
 	  */
-	val encryptedFlag = "63 12471 17384 19150 3861 17806 15090 5270"
-	val rsaKey = RsaPublicKey(n = 19153, e = 17)
+	val encryptedFlag = "" // You should change this
+	val rsaKey = RsaPublicKey(n = 0, e = 0) // You should change this
 
 	// Uncomment these when you're ready
-	val decryptedFlag = RsaBreaker.bruteForceDecrypt(encryptedFlag, rsaKey)
-	Console.println(s"You decrypted the message to: $decryptedFlag")
+//	val decryptedFlag = RsaBreaker.bruteForceDecrypt(encryptedFlag, rsaKey)
+//	Console.println(s"You decrypted the message to: $decryptedFlag")
 }
