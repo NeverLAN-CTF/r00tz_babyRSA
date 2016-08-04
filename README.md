@@ -7,6 +7,7 @@ This software is intentionally crippled. It is unsuitable for practical cryptogr
 Do an `sbt run` to get started, or read the code.
 
 Copyright (c) 2016, Jacob Prystowsky (https://github.com/jprystowsky)
+
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
