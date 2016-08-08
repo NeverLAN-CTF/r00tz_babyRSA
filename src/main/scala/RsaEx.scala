@@ -46,19 +46,22 @@ object RsaEx extends App {
 	/**
 	  * Let's demonstrate RSA using a random key to get the hang of things.
 	  * This MIGHT fail. If it does, just run it again.
-	  * This code deliberately uses very small numbers. That's what makes it possible for us to break.
 	  */
 	val randomKey = RsaCryptosystem.generateRandomKey
 	Console.println(s"We randomly generated this key:\n$randomKey")
 
+	Console.println("Now let's demonstrate RSA:")
+
 	val cleartext = "hello, hackers"
-	Console.println(s"Cleartext: $cleartext")
+	Console.println(s"We have this cleartext: $cleartext")
 
 	val ciphertext = RsaCryptosystem.encrypt(cleartext, randomKey)
-	Console.println(s"Ciphertext: $ciphertext")
+	Console.println(s"It encrypts to: $ciphertext")
 
 	val decryptedCleartext = RsaCryptosystem.decrypt(ciphertext, randomKey)
-	Console.println(s"Decrypted back: $decryptedCleartext")
+	Console.println(s"And decrypts back to: $decryptedCleartext")
+
+	Console.println("\n\nHere's where you come in. Read RsaEx.scala and come back when you're ready.")
 
 	/**
 	  * You have stolen the following ciphertext:
@@ -68,17 +71,15 @@ object RsaEx extends App {
 	  * n = 19153
 	  * e = 17
 	  *
-	  * Break the key and decrypt the ciphertext to get the flag
-	  */
-
-	/**
-	  * todo: removeme:
-	  * Suggest removing these three lines or gutting severely;
-	  * another valid solution might not include RsaBreaker at all but just procedural code of same purpose
+	  * Break the key and decrypt the ciphertext to get the flag.
 	  *
-	  * Flag decrypts to: harmonic
+	  * You will need to write some code! When you think you're ready,
+	  * uncomment the last two lines before the closing }.
 	  */
-	val encryptedFlag = "63 12471 17384 19150 3861 17806 15090 5270"
-	val decryptedFlag = RsaBreaker.bruteForceDecrypt(encryptedFlag, RsaPublicKey(n = 19153, e = 17))
-	Console.println(s"Decrypted to: $decryptedFlag")
+	val encryptedFlag = "" // You should change this
+	val rsaKey = RsaPublicKey(n = 0, e = 0) // You should change this
+
+	// Uncomment these when you're ready
+//	val decryptedFlag = RsaBreaker.bruteForceDecrypt(encryptedFlag, rsaKey)
+//	Console.println(s"You decrypted the message to: $decryptedFlag")
 }
